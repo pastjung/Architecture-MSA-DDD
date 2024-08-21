@@ -1,0 +1,16 @@
+services:
+  app:
+    build:
+      context: ./fastapi-service
+      dockerfile: Dockerfile
+    image: 'fastapi-image:latest'
+    container_name: 'fastapi-container'
+    restart: always
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./fastapi-service:/fastapi-app
+    ports:
+      - "${FASTAPI_PORT}:8002"
+    env_file:
+      - .env
