@@ -18,7 +18,18 @@
 
 - 본 프로젝트는 Docker를 사용하므로 `.env.template` 파일을 참고하여 `.env` 파일에 환경 변수값을 작성해주세요.
     ```
-    FASTAPI_PORT=호스트 포트
+    FASTAPI_PORT=FASTAPI 호스트 포트
+    FASTAPI_HOST_PORT=FASTAPI 서버 포트
+    SPRINGBOOT_HOST_PORT=SPRINGBOOT 호스트 포트
+    SPRINGBOOT_SERVER_PORT=SPRINGBOOT 서버 포트
+    ```
+- `FASTAPI_HOST_PORT`와 fastapi-service/`entrypoint.sh` 의 포트 번호를 일치시켜주세요
+    ```
+    uvicorn service.main:app --host 0.0.0.0 --port 8000 --reload \
+    ```
+- `SPRINGBOOT_HOST_PORT`와 springboot-servie/src/main/resources/`application.properties` 파일의 `server.port`를 일치시켜 주세요
+    ```
+    server.port=xxxx
     ```
 
 
