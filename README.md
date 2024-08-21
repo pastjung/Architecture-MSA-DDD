@@ -65,6 +65,10 @@
     │
     ├── springboot-service/
     │   ├── Dockerfile
+    │   ├── build.gradle
+    │   ├── settings.gradle
+    │   ├── gradlew
+    │   ├── gradle/
     │   └── src/
     │       ├── main/
     │       │   ├── java/

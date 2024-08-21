@@ -2,5 +2,3 @@
 venv
 data
 .env
-
-application.properties

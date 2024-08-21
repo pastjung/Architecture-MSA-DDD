@@ -1,5 +1,5 @@
 services:
-  app:
+  fastapi-app:
     build:
       context: ./fastapi-service
       dockerfile: Dockerfile
@@ -11,6 +11,30 @@ services:
     volumes:
       - ./fastapi-service:/fastapi-app
     ports:
-      - "${FASTAPI_PORT}:8002"
+      - "${FASTAPI_HOST_PORT}:${FASTAPI_SERVER_PORT}"
     env_file:
       - .env
+    networks:
+      - docker-network-test
+  
+  springboot-app:
+    build:
+      context: ./springboot-service
+      dockerfile: Dockerfile
+    image: 'springboot-image:latest'
+    container_name: 'springboot-container'
+    restart: always
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./springboot-service:/springboot-app
+    ports:
+      - "${SPRINGBOOT_HOST_PORT}:${SPRINGBOOT_SERVER_PORT}"
+    env_file:
+      - .env
+    networks:
+      - docker-network-test
+
+networks:
+  docker-network-test:
+    name: docker-network-test
