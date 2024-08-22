@@ -5,8 +5,12 @@
 
 
 ## Current: ver. 1.0.0<br/>
-
-> - FastAPI Container 추가
+>* ver 1.0.0.
+>   * FastAPI Container 추가
+>* ver 1.0.1.
+>   * SpringBoot Container 추가
+>* ver 1.0.2.
+>   * FastAPI 설정 추가 ( Swagger, CORS 등 )
 
 
 # 1. 프로그램 (프로젝트) 설명
