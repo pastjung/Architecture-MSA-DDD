@@ -66,17 +66,17 @@
     │   ├── app/
     │   │   ├── main.py
     │   │   ├── models/
-    │   │   │   └── search_model.py
+    │   │   │   ├── users_schemas/
+    │   │   │   │   ├── request.py
+    │   │   │   │   └── response.py
+    │   │   │   └── users.py
     │   │   ├── routers/
-    │   │   │   └── search_router.py
-    │   │   ├── schemas/
-    │   │   │   └── search_schema.py
-    │   │   └── services/
-    │   │       └── search_service.py
+    │   │   │   └── users_routers.py
+    │   │   └── crud/
+    │   │       └── users_crud.py
     │   └── config/
     │       ├── config.ini
-    │       ├── database.py
-    │       └── settings.py
+    │       └── database.py
     │
     ├── springboot-service/
     │   ├── Dockerfile
