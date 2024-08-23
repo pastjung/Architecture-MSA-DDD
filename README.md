@@ -11,6 +11,8 @@
 >   * SpringBoot Container 추가
 >* ver 1.0.2.
 >   * FastAPI 설정 추가 ( Swagger, CORS 등 )
+>* ver 1.0.3.
+>   * FastAPI + MariaDB 연동
 
 
 # 1. 프로그램 (프로젝트) 설명
@@ -26,6 +28,12 @@
     FASTAPI_HOST_PORT=FASTAPI 서버 포트
     SPRINGBOOT_HOST_PORT=SPRINGBOOT 호스트 포트
     SPRINGBOOT_SERVER_PORT=SPRINGBOOT 서버 포트
+
+    MARIADB_HOST_PORT=
+    MARIADB_SERVER_PORT=
+    MARIADB_ID=
+    MARIADB_ROOT_PASSWORD=
+    DB_NAME=
     ```
 - `FASTAPI_HOST_PORT`와 fastapi-service/`entrypoint.sh` 의 포트 번호를 일치시켜주세요
     ```
@@ -57,11 +65,11 @@
     │   └── mariadb-data/ (optional for persistent MariaDB storage)
     │
     ├── fastapi-service/
-    │   ├── .env
-    │   ├── .env.template
     │   ├── dockerfile
     │   ├── entrypoint.sh
     │   ├── requirements.txt
+    │   ├── .env
+    │   ├── .env.template
     │   ├── venv/
     │   ├── app/
     │   │   ├── main.py
@@ -80,6 +88,8 @@
     │
     ├── springboot-service/
     │   ├── Dockerfile
+    │   ├── .env
+    │   ├── .env.template
     │   ├── build.gradle
     │   ├── settings.gradle
     │   ├── gradlew

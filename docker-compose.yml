@@ -9,11 +9,14 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      - ./fastapi-service:/fastapi-app
+      - ./fastapi-service:/fastapi-app  # 프로젝트와 컨테이너를 마운트 시켜 즉각적으로 반영되도록 설정
+      - .env:/.env
     ports:
       - "${FASTAPI_HOST_PORT}:${FASTAPI_SERVER_PORT}"
     env_file:
       - .env
+    depends_on:
+      - mariadb
     networks:
       - docker-network-test
   
@@ -32,6 +35,26 @@ services:
       - "${SPRINGBOOT_HOST_PORT}:${SPRINGBOOT_SERVER_PORT}"
     env_file:
       - .env
+    depends_on:
+      - mariadb
+    networks:
+      - docker-network-test
+
+  mariadb:
+    image: mariadb:latest
+    container_name: 'mariadb-container'
+    restart: always
+    environment:
+      - "MYSQL_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD}"  # 루트 사용자 비밀번호
+      - "MYSQL_DATABASE=${MAREADB_DATABASE}"            # 자동 생성할 DB 이름
+    volumes:
+      - ./data/mariadb:/data/mariadb
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    env_file:
+      - .env
+    ports:
+      - '${MARIADB_HOST_PORT}:${MARIADB_SERVER_PORT}'
     networks:
       - docker-network-test
 
