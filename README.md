@@ -12,7 +12,7 @@
 >* ver 1.0.2.
 >   * FastAPI 설정 추가 ( Swagger, CORS 등 )
 >* ver 1.0.3.
->   * FastAPI + MariaDB 연동
+>   * FastAPI + MariaDB 연동 & MariDB 데이터베이스, 테이블 자동 생성
 
 
 # 1. 프로그램 (프로젝트) 설명
@@ -68,8 +68,6 @@
     │   ├── dockerfile
     │   ├── entrypoint.sh
     │   ├── requirements.txt
-    │   ├── .env
-    │   ├── .env.template
     │   ├── venv/
     │   ├── app/
     │   │   ├── main.py
@@ -88,8 +86,6 @@
     │
     ├── springboot-service/
     │   ├── Dockerfile
-    │   ├── .env
-    │   ├── .env.template
     │   ├── build.gradle
     │   ├── settings.gradle
     │   ├── gradlew
@@ -121,5 +117,7 @@
     │
     ├── .gitignore
     ├── docker-compose.yml
+    ├── .env
+    ├── .env.template
     └── README.md
 ```
