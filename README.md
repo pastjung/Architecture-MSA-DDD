@@ -24,16 +24,18 @@
 
 - 본 프로젝트는 Docker를 사용하므로 `.env.template` 파일을 참고하여 `.env` 파일에 환경 변수값을 작성해주세요.
     ```
-    FASTAPI_PORT=FASTAPI 호스트 포트
-    FASTAPI_HOST_PORT=FASTAPI 서버 포트
-    SPRINGBOOT_HOST_PORT=SPRINGBOOT 호스트 포트
-    SPRINGBOOT_SERVER_PORT=SPRINGBOOT 서버 포트
+    # 예시
+    FASTAPI_HOST_PORT=8001
+    FASTAPI_SERVER_PORT=8000
 
-    MARIADB_HOST_PORT=
-    MARIADB_SERVER_PORT=
-    MARIADB_ID=
-    MARIADB_ROOT_PASSWORD=
-    DB_NAME=
+    SPRINGBOOT_HOST_PORT=8081
+    SPRINGBOOT_SERVER_PORT=8080
+
+    MARIADB_HOST_PORT=3307
+    MARIADB_SERVER_PORT=3306
+    MARIADB_ID=root
+    MARIADB_ROOT_PASSWORD=12345678
+    MAREADB_DATABASE=sample
     ```
 - `FASTAPI_HOST_PORT`와 fastapi-service/`entrypoint.sh` 의 포트 번호를 일치시켜주세요
     ```
