@@ -41,7 +41,7 @@
     ```
     uvicorn service.main:app --host 0.0.0.0 --port 8000 --reload \
     ```
-- `SPRINGBOOT_HOST_PORT`와 springboot-servie/src/main/resources/`application.properties` 파일의 `server.port`를 일치시켜 주세요
+- `SPRINGBOOT_SERVER_PORT`와 springboot-servie/src/main/resources/`application.properties` 파일의 `server.port`를 일치시켜 주세요
     ```
     server.port=xxxx
     ```
